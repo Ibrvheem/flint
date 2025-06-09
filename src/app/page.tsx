@@ -1,103 +1,138 @@
 import Image from "next/image";
+import HeroImage from "../assets/images/hero-sec.png";
+import SampleProd from "../assets/images/sample-prod.png";
+import MainSampleProd from "../assets/images/main-prod-sample.png";
+import LastSectionImage from "../assets/images/last-section.png";
+import LandingPageBanner from "../assets/images/landing-banner.svg";
+import SMLOOGO from "../assets/icons/flint-sm-white-logo.svg";
+import SHOPBADGE from "../assets/icons/shop-badge.svg";
+
+import Nav from "@/components/molecules/nav";
+import Footer from "@/components/molecules/footer";
+import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <div className="relative">
+        <Nav />
+        <div className="h-screen">
+          <div className="relative  overflow-hidden flex items-center justify-center">
+            <Image alt="" src={HeroImage} className="h-[90vh] object-cover" />
+            <h1 className="-bottom-44 absolute text-[330px] font-bold text-white text-center">
+              #FLINT IT
+            </h1>
+          </div>{" "}
+          <div>
+            <VelocityScroll numRows={1} className="!w-full bg-black ">
+              <div className="flex items-center gap-4">
+                <h2 className="text-white font-medium mx-4">
+                  Dare to be different
+                </h2>
+                <svg
+                  width="47"
+                  height="47"
+                  viewBox="0 0 47 47"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.23 32.0203L23.1021 32.0564L23.3374 32.0613L23.3335 32.2976L23.0601 46.3748L23.0562 46.6111L22.8198 46.6062L20.9478 46.5701L20.7114 46.5662L20.7163 46.3298L20.9897 32.2527L20.9937 32.0164L21.23 32.0203ZM27.1909 31.1082L34.2798 43.2732L34.3989 43.4773L34.1948 43.5964L32.5776 44.5388L32.3735 44.657L32.2544 44.4529L25.1655 32.2878L25.0464 32.0837L25.2505 31.9646L26.8677 31.0222L27.0718 30.9031L27.1909 31.1082ZM17.4575 29.7322L19.02 30.7634L19.2173 30.8933L19.0874 31.0906L11.3325 42.8425L11.2026 43.0398L11.0054 42.9099L9.44287 41.8787L9.24561 41.7488L9.37549 41.5515L17.1304 29.7996L17.2603 29.6023L17.4575 29.7322ZM30.2124 28.4031L42.6685 34.9685L42.8774 35.0789L42.7671 35.2878L41.894 36.9441L41.7847 37.1531L41.5757 37.0427L29.1196 30.4773L28.9106 30.3669L29.021 30.158L29.894 28.5027L30.0034 28.2927L30.2124 28.4031ZM15.189 25.1785L16.0483 26.8406L16.1567 27.0505L15.9468 27.1589L3.43799 33.6238L3.229 33.7322L3.11963 33.5222L2.26025 31.8591L2.15186 31.6492L2.36182 31.5408L14.8706 25.0769L15.0806 24.9685L15.189 25.1785ZM46.7095 24.1267V26.4714H32.1567V24.1267H46.7095ZM14.9146 20.6648V23.0095H0.361816V20.6648H14.9146ZM43.9507 12.9343L44.8101 14.5964L44.9194 14.8064L44.7095 14.9158L32.2007 21.3796L31.9907 21.488L31.8823 21.2781L31.0229 19.615L30.9146 19.405L31.1245 19.2966L43.6323 12.8328L43.8423 12.7244L43.9507 12.9343ZM5.08838 9.95776L17.5435 16.5232L17.7524 16.6326L17.6421 16.8416L16.77 18.4978L16.6597 18.7068L16.4507 18.5964L3.99463 12.031L3.78564 11.9207L3.896 11.7117L4.76904 10.0564L4.87939 9.84741L5.08838 9.95776ZM35.6587 4.09058L37.2202 5.12085L37.4175 5.25171L37.2876 5.44897L29.5327 17.2009L29.4028 17.3982L29.2056 17.2673L27.6431 16.2371L27.4458 16.1062L27.5757 15.9089L35.3306 4.15698L35.4614 3.95972L35.6587 4.09058ZM14.4087 2.54663L21.4976 14.7117L21.6167 14.9158L21.4126 15.0349L19.7954 15.9773L19.5913 16.0964L19.4722 15.8923L12.3833 3.72729L12.2642 3.52319L12.4683 3.40405L14.0854 2.46167L14.2896 2.34253L14.4087 2.54663ZM23.8442 0.393311L25.7153 0.429443L25.9517 0.434326L25.9468 0.670654L25.6743 14.7478L25.6694 14.9841L25.4331 14.9792L23.562 14.9431L23.3257 14.9382L23.3296 14.7019L23.603 0.624756L23.6079 0.388428L23.8442 0.393311Z"
+                    fill="white"
+                    stroke="white"
+                    stroke-width="0.472633"
+                  />
+                </svg>
+                <h2 className="text-white font-medium mx-4 ">Flint It!</h2>
+                <svg
+                  width="47"
+                  height="47"
+                  viewBox="0 0 47 47"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.23 32.0203L23.1021 32.0564L23.3374 32.0613L23.3335 32.2976L23.0601 46.3748L23.0562 46.6111L22.8198 46.6062L20.9478 46.5701L20.7114 46.5662L20.7163 46.3298L20.9897 32.2527L20.9937 32.0164L21.23 32.0203ZM27.1909 31.1082L34.2798 43.2732L34.3989 43.4773L34.1948 43.5964L32.5776 44.5388L32.3735 44.657L32.2544 44.4529L25.1655 32.2878L25.0464 32.0837L25.2505 31.9646L26.8677 31.0222L27.0718 30.9031L27.1909 31.1082ZM17.4575 29.7322L19.02 30.7634L19.2173 30.8933L19.0874 31.0906L11.3325 42.8425L11.2026 43.0398L11.0054 42.9099L9.44287 41.8787L9.24561 41.7488L9.37549 41.5515L17.1304 29.7996L17.2603 29.6023L17.4575 29.7322ZM30.2124 28.4031L42.6685 34.9685L42.8774 35.0789L42.7671 35.2878L41.894 36.9441L41.7847 37.1531L41.5757 37.0427L29.1196 30.4773L28.9106 30.3669L29.021 30.158L29.894 28.5027L30.0034 28.2927L30.2124 28.4031ZM15.189 25.1785L16.0483 26.8406L16.1567 27.0505L15.9468 27.1589L3.43799 33.6238L3.229 33.7322L3.11963 33.5222L2.26025 31.8591L2.15186 31.6492L2.36182 31.5408L14.8706 25.0769L15.0806 24.9685L15.189 25.1785ZM46.7095 24.1267V26.4714H32.1567V24.1267H46.7095ZM14.9146 20.6648V23.0095H0.361816V20.6648H14.9146ZM43.9507 12.9343L44.8101 14.5964L44.9194 14.8064L44.7095 14.9158L32.2007 21.3796L31.9907 21.488L31.8823 21.2781L31.0229 19.615L30.9146 19.405L31.1245 19.2966L43.6323 12.8328L43.8423 12.7244L43.9507 12.9343ZM5.08838 9.95776L17.5435 16.5232L17.7524 16.6326L17.6421 16.8416L16.77 18.4978L16.6597 18.7068L16.4507 18.5964L3.99463 12.031L3.78564 11.9207L3.896 11.7117L4.76904 10.0564L4.87939 9.84741L5.08838 9.95776ZM35.6587 4.09058L37.2202 5.12085L37.4175 5.25171L37.2876 5.44897L29.5327 17.2009L29.4028 17.3982L29.2056 17.2673L27.6431 16.2371L27.4458 16.1062L27.5757 15.9089L35.3306 4.15698L35.4614 3.95972L35.6587 4.09058ZM14.4087 2.54663L21.4976 14.7117L21.6167 14.9158L21.4126 15.0349L19.7954 15.9773L19.5913 16.0964L19.4722 15.8923L12.3833 3.72729L12.2642 3.52319L12.4683 3.40405L14.0854 2.46167L14.2896 2.34253L14.4087 2.54663ZM23.8442 0.393311L25.7153 0.429443L25.9517 0.434326L25.9468 0.670654L25.6743 14.7478L25.6694 14.9841L25.4331 14.9792L23.562 14.9431L23.3257 14.9382L23.3296 14.7019L23.603 0.624756L23.6079 0.388428L23.8442 0.393311Z"
+                    fill="white"
+                    stroke="white"
+                    stroke-width="0.472633"
+                  />
+                </svg>
+              </div>
+            </VelocityScroll>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="py-8 px-16 bg-white text-black space-y-8">
+          <h2 className="text-6xl font-semibold">The Collections</h2>
+          <div className="grid grid-cols-2 gap-32">
+            <div className="space-y-2">
+              <Image
+                alt=""
+                src={SampleProd}
+                className="h-[600px] object-cover"
+              />
+              <div className="flex justify-between items-center">
+                <h4 className="text-2xl">UFO takeoff</h4>
+                <h4 className="text-2xl">NGN 7000</h4>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Image
+                alt=""
+                src={SampleProd}
+                className="h-[600px] object-cover"
+              />
+              <div className="flex justify-between items-center">
+                <h4 className="text-2xl">UFO takeoff</h4>
+                <h4 className="text-2xl">NGN 7000</h4>
+              </div>
+            </div>
+            <div className="col-span-2 space-y-2">
+              <Image
+                alt=""
+                src={MainSampleProd}
+                className="h-[600px] object-cover object-center"
+              />
+              <div className="flex justify-between items-center">
+                <h4 className="text-2xl">UFO takeoff</h4>
+                <h4 className="text-2xl">NGN 7000</h4>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Image
+                alt=""
+                src={SampleProd}
+                className="h-[600px] object-cover"
+              />
+              <div className="flex justify-between items-center">
+                <h4 className="text-2xl">UFO takeoff</h4>
+                <h4 className="text-2xl">NGN 7000</h4>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Image
+                alt=""
+                src={SampleProd}
+                className="h-[600px] object-cover"
+              />
+              <div className="flex justify-between items-center">
+                <h4 className="text-2xl">UFO takeoff</h4>
+                <h4 className="text-2xl">NGN 7000</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-red-400">
+          <div className="bg-white text-black relative w-full">
+            <Image
+              alt=""
+              src={LandingPageBanner}
+              className="absolute  z-10 w-full"
+            />
+          </div>
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 }
