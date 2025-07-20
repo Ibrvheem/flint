@@ -1,5 +1,6 @@
 import Image from "next/image";
-import HeroImage from "../assets/images/hero-sec.png";
+import HeroImage from "../assets/images/home-bg.svg";
+import HeroImageSm from "../assets/images/hero-sec.png";
 import SampleProd from "../assets/images/sample-prod.png";
 import MainSampleProd from "../assets/images/main-prod-sample.png";
 import LastSectionImage from "../assets/images/last-section.png";
@@ -18,10 +19,16 @@ export default function Home() {
         <Nav />
         <div className="h-screen">
           <div className="relative  overflow-hidden flex items-center justify-center">
-            <Image alt="" src={HeroImage} className="h-[90vh] object-cover" />
-            <h1 className="-bottom-44 absolute text-[330px] font-bold text-white text-center">
-              #FLINT IT
-            </h1>
+            <Image
+              alt=""
+              src={HeroImage}
+              className="md:h-[92vh] md:block hidden w-full object-cover"
+            />
+            <Image
+              alt=""
+              src={HeroImageSm}
+              className="h-[95vh] md:hidden block w-full object-cover"
+            />
           </div>{" "}
           <div>
             <VelocityScroll numRows={1} className="!w-full bg-black ">
@@ -62,62 +69,64 @@ export default function Home() {
             </VelocityScroll>
           </div>
         </div>
-        <div className="py-8 px-16 bg-white text-black space-y-8">
-          <h2 className="text-6xl font-semibold">The Collections</h2>
-          <div className="grid grid-cols-2 gap-32">
+        <div className="py-8 md:px-16 px-6 bg-white text-black space-y-8">
+          <h2 className="md:text-6xl text-4xl font-semibold">
+            The Collections
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4">
             <div className="space-y-2">
               <Image
                 alt=""
                 src={SampleProd}
-                className="h-[600px] object-cover"
+                className="md:h-[600px] h-[300px]  object-cover"
               />
               <div className="flex justify-between items-center">
-                <h4 className="text-2xl">UFO takeoff</h4>
-                <h4 className="text-2xl">NGN 7000</h4>
+                <h4 className="md:text-2xl">UFO takeoff</h4>
+                <h4 className="md:text-2xl">NGN 7000</h4>
               </div>
             </div>
             <div className="space-y-2">
               <Image
                 alt=""
                 src={SampleProd}
-                className="h-[600px] object-cover"
+                className="md:h-[600px] h-[300px]  object-cover"
               />
               <div className="flex justify-between items-center">
-                <h4 className="text-2xl">UFO takeoff</h4>
-                <h4 className="text-2xl">NGN 7000</h4>
+                <h4 className="md:text-2xl">UFO takeoff</h4>
+                <h4 className="md:text-2xl">NGN 7000</h4>
               </div>
             </div>
             <div className="col-span-2 space-y-2">
               <Image
                 alt=""
                 src={MainSampleProd}
-                className="h-[600px] object-cover object-center"
+                className="md:h-[600px] h-[300px]  object-cover object-center"
               />
               <div className="flex justify-between items-center">
-                <h4 className="text-2xl">UFO takeoff</h4>
-                <h4 className="text-2xl">NGN 7000</h4>
+                <h4 className="md:text-2xl">UFO takeoff</h4>
+                <h4 className="md:text-2xl">NGN 7000</h4>
               </div>
             </div>
             <div className="space-y-2">
               <Image
                 alt=""
                 src={SampleProd}
-                className="h-[600px] object-cover"
+                className="md:h-[600px] h-[300px]  object-cover"
               />
               <div className="flex justify-between items-center">
-                <h4 className="text-2xl">UFO takeoff</h4>
-                <h4 className="text-2xl">NGN 7000</h4>
+                <h4 className="md:text-2xl">UFO takeoff</h4>
+                <h4 className="md:text-2xl">NGN 7000</h4>
               </div>
             </div>
             <div className="space-y-2">
               <Image
                 alt=""
                 src={SampleProd}
-                className="h-[600px] object-cover"
+                className="md:h-[600px] h-[300px]  object-cover"
               />
               <div className="flex justify-between items-center">
-                <h4 className="text-2xl">UFO takeoff</h4>
-                <h4 className="text-2xl">NGN 7000</h4>
+                <h4 className="md:text-2xl">UFO takeoff</h4>
+                <h4 className="md:text-2xl">NGN 7000</h4>
               </div>
             </div>
           </div>
@@ -127,11 +136,10 @@ export default function Home() {
             <Image
               alt=""
               src={LandingPageBanner}
-              className="absolute  z-10 w-full"
+              className=" object-cover z-10 w-full"
             />
           </div>
         </div>
-        <Footer />
       </div>
     </div>
   );
